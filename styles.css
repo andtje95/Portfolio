@@ -1,1 +1,33 @@
+/*PRESENTATION......................................................*/
+.presentation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap; /* gör det möjligt att bryta raden på mindre skärmar */
+}
+
+.presentation-text {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+.presentation-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Mobilanpassning – stapla på mindre skärmar */
+@media (max-width: 768px) {
+  .presentation {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .presentation-image img {
+    max-width: 80%;
+  }
+}
 
