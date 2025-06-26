@@ -3,31 +3,41 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 2rem;
-  flex-wrap: wrap; /* gör det möjligt att bryta raden på mindre skärmar */
+  flex-wrap: wrap; /* gör att innehållet kan brytas på mindre skärmar */
 }
 
 .presentation-text {
-  flex: 1 1 300px;
-  min-width: 250px;
+  flex: 1 1 50%;  /* tar ungefär 50% av bredden */
+  min-width: 300px;
+}
+
+.presentation-image {
+  flex: 1 1 50%;  /* tar ungefär 50% av bredden */
+  min-width: 300px;
 }
 
 .presentation-image img {
-  width: 100%;
-  max-width: 300px;
+  width: 100%;   /* bilden fyller sin container */
   height: auto;
   border-radius: 8px;
 }
 
-/* Mobilanpassning – stapla på mindre skärmar */
+/* Mobilanpassning — stapla innehållet */
 @media (max-width: 768px) {
   .presentation {
     flex-direction: column;
     text-align: center;
   }
 
+  .presentation-text,
+  .presentation-image {
+    flex: 1 1 100%; /* tar hela bredden */
+  }
+
   .presentation-image img {
     max-width: 80%;
+    margin: 0 auto;
   }
 }
+
 
