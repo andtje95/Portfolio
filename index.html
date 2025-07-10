@@ -9,41 +9,80 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="index.html">Case</a></li>
-        <li><a href="om.html">Om mig</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
+      <div class="container">
+        <ul>
+          <li><a href="index.html">Case</a></li>
+          <li><a href="om.html">Om mig</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="presentation">
-      <div class="presentation-text">
-        <h1>Hi! My name is Andreas</h1>
-        <h2>I'm a UX Designer based in Stockholm</h2>
-      </div>
-
-      <div class="presentation-image">
-        <img src="images/andreas.jpg" alt="Bild på Andreas" />
-      </div>
-    </div>
-
-    <div class="presentation">
-      <div class="presentation-text">
-        <h1>Hi! My name is Andreas</h1>
-        <h2>I'm a UX Designer based in Stockholm</h2>
-      </div>
-
-      <div class="presentation-image">
-        <img src="images/andreas.jpg" alt="Bild på Andreas" />
+    <div class="container">
+      <div class="presentation">
+        <div class="presentation-text">
+          <h1>Hi! My name is Andreas</h1>
+          <h2>I'm a UX Designer based in Stockholm</h2>
+        </div>
+        <div class="presentation-image">
+          <img src="images/andreas.jpg" alt="Bild på Andreas" />
+        </div>
       </div>
     </div>
 
-    <script src="Script.js"></script>
+    <!-- Utvecklings-grid -->
+    <div class="grid-overlay">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <script>
+      const nav = document.querySelector("nav");
+      let lastScrollTop = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const scrollTrigger = nav.offsetHeight;
+
+        if (currentScroll > scrollTrigger) {
+          if (currentScroll > lastScrollTop) {
+            nav.classList.add("hide");
+            nav.classList.remove("show");
+          } else {
+            nav.classList.add("show");
+            nav.classList.remove("hide");
+          }
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      });
+
+      // Toggle grid overlay med G
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "g") {
+          document.querySelector(".grid-overlay")?.classList.toggle("visible");
+        }
+      });
+    </script>
   </body>
 </html>
