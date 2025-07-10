@@ -1,12 +1,39 @@
-/*MENYN*/
-nav ul {
-  list-style: none;      /* Tar bort prickarna */
-  display: flex;         /* Gör listan horisontell */
-  gap: 2rem;             /* Avstånd mellan länkarna */
+h1 {
+  font-family: "Roboto";
+  font-size: 4rem;
+  font-weight: 400;
 }
 
-/*PRESENTATION......................................................*/
-html, body {
+h2 {
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/*MENYN*/
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Viktigt så den inte blir genomskinlig */
+  z-index: 1000; /* Så den hamnar ovanför allt annat */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lätt skugga när du scrollar */
+  font-family: Roboto;
+  font-size: 1rem;
+  color: black;
+}
+
+nav ul {
+  list-style: none; /* Tar bort prickarna */
+  display: flex; /* Gör listan horisontell */
+  justify-content: flex-end; /* Flyttar hela menyn till höger */
+  gap: 2rem; /* Avstånd mellan länkarna */
+}
+
+/*PRESENTATION*/
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -15,7 +42,7 @@ html, body {
 .presentation {
   display: flex;
   height: 100vh; /* tar hela höjden på viewport */
-  width: 100vw;  /* tar hela bredden på viewport */
+  width: 100vw; /* tar hela bredden på viewport */
 }
 
 .presentation-text {
@@ -34,7 +61,7 @@ html, body {
 
 .presentation-image img {
   width: 100%;
-  height: 100vh;  /* fyller hela höjden */
+  height: 100vh; /* fyller hela höjden */
   object-fit: cover; /* beskär bilden snyggt utan att ändra proportioner */
   display: block;
 }
@@ -46,7 +73,8 @@ html, body {
     height: auto;
   }
 
-  .presentation-text, .presentation-image {
+  .presentation-text,
+  .presentation-image {
     width: 100vw;
     height: auto;
   }
@@ -57,6 +85,3 @@ html, body {
     margin: 0 auto;
   }
 }
-
-
-
