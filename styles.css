@@ -1,3 +1,7 @@
+body {
+  padding-top: 100px; /* justera beroende på din nav-höjd */
+}
+
 h1 {
   font-family: "Roboto";
   font-size: 4rem;
@@ -13,15 +17,19 @@ h2 {
 /*MENYN*/
 
 nav {
-  position: sticky;
+  position: fixed; /* ändrat från sticky */
   top: 0;
-  background-color: white; /* Viktigt så den inte blir genomskinlig */
-  z-index: 1000; /* Så den hamnar ovanför allt annat */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lätt skugga när du scrollar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   font-family: Roboto;
   font-size: 1rem;
   color: black;
+  transition: transform 0.3s ease; /* mjuk rörelse */
 }
 
 nav ul {
@@ -29,6 +37,28 @@ nav ul {
   display: flex; /* Gör listan horisontell */
   justify-content: flex-end; /* Flyttar hela menyn till höger */
   gap: 2rem; /* Avstånd mellan länkarna */
+}
+
+nav li a {
+  text-decoration: none; /* Tar bort understrykning */
+  color: black; /* Anpassa efter din design */
+  border: 2px solid black; /* Lägger till ram */
+  padding: 1rem 2rem; /* Lite luft inuti */
+  border-radius: 100px; /* Valfritt: rundar hörn */
+  transition: background-color 0.3s ease; /* För smidig hover-effekt */
+}
+
+nav li a:hover {
+  color: white; /* Ny textfärg vid hover */
+  background-color: black; /* Ny bakgrundsfärg vid hover */
+}
+
+nav.hide {
+  transform: translateY(-100%); /* skjut upp menyn ur bild */
+}
+
+nav.show {
+  transform: translateY(0); /* visa menyn igen */
 }
 
 /*PRESENTATION*/
