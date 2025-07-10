@@ -1,3 +1,10 @@
+/*MENYN*/
+nav ul {
+  list-style: none;      /* Tar bort prickarna */
+  display: flex;         /* Gör listan horisontell */
+  gap: 2rem;             /* Avstånd mellan länkarna */
+}
+
 /*PRESENTATION......................................................*/
 html, body {
   margin: 0;
