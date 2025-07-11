@@ -145,7 +145,8 @@ nav.show {
   z-index: 9999;
   display: none;
   background-image:
-    /* Vertikala linjer (16 kolumner) */ repeating-linear-gradient(
+    /* Vertikala linjer (16 kolumner) */
+    repeating-linear-gradient(
       to right,
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1) 1px,
@@ -153,16 +154,16 @@ nav.show {
       transparent calc((100% - 2 * 2rem) / 16)
     ),
     /* Horisontella linjer var 8px (0.5rem) */
-      repeating-linear-gradient(
-        to bottom,
-        rgba(255, 0, 0, 0.1),
-        rgba(255, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 0.5rem
-      );
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 0, 0, 0.1),
+      rgba(255, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 0.5rem
+    );
   background-size: 100% 100%;
   box-sizing: border-box;
-  padding: 0 2rem; /* Samma som din .container sidmarginal */
+  padding: 0 2rem; /* Samma sidmarginal som .container */
 }
 
 .grid-overlay.visible {
