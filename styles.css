@@ -51,6 +51,13 @@ nav ul {
   padding: 0;
 }
 
+nav .container {
+  display: flex;
+  align-items: center; /* centrerar vertikalt */
+  justify-content: flex-end; /* behåller att länkarna är till höger */
+  height: 100%; /* krävs om du sätter fast höjd på nav */
+}
+
 nav li a {
   text-decoration: none;
   color: black;
