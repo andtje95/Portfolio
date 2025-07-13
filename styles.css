@@ -55,8 +55,8 @@ nav ul {
 nav .container {
   display: flex;
   align-items: center; /* centrerar vertikalt */
-  justify-content: flex-end; /* behåller att länkarna är till höger */
-  height: 100%; /* krävs om du sätter fast höjd på nav */
+  justify-content: flex-end; /* länkarna till höger */
+  height: 100%; /* krävs vid fast höjd på nav */
 }
 
 nav li a {
@@ -86,6 +86,7 @@ nav.show {
   display: flex;
   height: 100vh;
   gap: 2rem;
+  position: relative;
 }
 
 .presentation-text {
@@ -100,10 +101,14 @@ nav.show {
 .presentation-image {
   flex: 1;
   overflow: hidden;
+  position: relative;
+  margin-right: -1rem; /* tar bort container padding på höger sida */
 }
 
 .presentation-image img {
-  width: 100%;
+  position: relative;
+  right: -1rem; /* flyttar bilden utanför container padding */
+  width: calc(100% + 1rem);
   height: 100vh;
   object-fit: cover;
   display: block;
@@ -126,6 +131,8 @@ nav.show {
     height: auto;
     max-width: 90vw;
     margin: 0 auto;
+    position: static; /* ta bort right-förflyttning på mobil */
+    width: 100%;
   }
 
   nav ul {
